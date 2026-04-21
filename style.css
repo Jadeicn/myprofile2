@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Outfit:wght@300;400;500;600&display=swap');
+
+/* ── Reset ───────────────────────────────────── */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2a2a;
+  background-color: #faf9f6;
+}
+
+/* ── Banner ──────────────────────────────────── */
+
+.banner {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 100px 28px 90px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 70%, rgba(228, 172, 78, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(228, 172, 78, 0.05) 0%, transparent 50%);
+  animation: shimmer 8s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(3deg); }
+}
+
+.banner h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 7vw, 4.2rem);
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.banner h2 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: #e4ac4e;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 1;
+  border: none;
+  padding: 0;
+}
+
+.banner h2::before {
+  display: none;
+}
+
+/* ── CTA Button ──────────────────────────────── */
+
+.btn-yellow {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1a1a2e;
+  background: #e4ac4e;
+  padding: 14px 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(228, 172, 78, 0.3);
+}
+
+.btn-yellow:hover {
+  background: #d4993e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(228, 172, 78, 0.4);
+}
+
+/* ── Container ───────────────────────────────── */
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 50px 28px;
+}
+
+/* ── H2 Titles (outside banner) ──────────────── */
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 18px;
+  border-left: 4px solid #e4ac4e;
+}
+
+/* ── Subtitle ────────────────────────────────── */
+
+.subtitle {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #777;
+  letter-spacing: 0.03em;
+  margin-bottom: 28px;
+  padding-left: 18px;
+}
+
+/* ── Avatar ──────────────────────────────────── */
+
+.avatar {
+  display: block;
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 0 50px;
+  border: 4px solid transparent;
+  background:
+    linear-gradient(#faf9f6, #faf9f6) padding-box,
+    linear-gradient(135deg, #e4ac4e, #1a1a2e) border-box;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 28px rgba(228, 172, 78, 0.2);
+}
+
+/* ── Cards Grid ──────────────────────────────── */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #1a1a2e;
+  padding: 18px 20px;
+  text-align: center;
+}
+
+/* ── Responsive ──────────────────────────────── */
+
+@media (max-width: 600px) {
+  .banner {
+    padding: 70px 20px 60px;
+  }
+
+  .banner h1 {
+    font-size: 2.2rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .container {
+    padding: 36px 18px;
+  }
+}
